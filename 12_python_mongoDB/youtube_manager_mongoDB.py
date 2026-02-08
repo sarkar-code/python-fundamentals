@@ -1,5 +1,3 @@
-# AFTER LEARNING BACKEND i WILL COME TO THIS CODE FILE FOR REVIEW 
-
 from pymongo import MongoClient
 from bson import ObjectId
 
