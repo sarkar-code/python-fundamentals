@@ -1,10 +1,22 @@
 from pymongo import MongoClient
 from bson import ObjectId
+import os
 
-client = MongoClient("mongodb+srv://me:me@cluster0.lxl3fsq.mongodb.net/", tlsAllowInvalidCertificates=True)
-# Not a good idea to include id and password in code files
-#  tlsAllowInvalidCertificates=True - Not a good way to handle ssl
+# Try to load a .env file if python-dotenv is installed (optional)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass
 
+# Read MongoDB connection URI from environment variable to avoid embedding credentials
+mongo_uri = os.getenv("MONGODB_URI")
+if not mongo_uri:
+    raise RuntimeError("MONGODB_URI environment variable not set. Add it to your environment or create a .env file (see .env.example).")
+
+client = MongoClient(mongo_uri)
+
+# Avoid printing credentials in logs; printing client shows connection object only
 print(client)
 db = client["ytmanager"]
 video_collection = db["videos"]
