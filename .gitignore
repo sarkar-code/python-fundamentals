@@ -1,0 +1,63 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Distribution and build
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+
+# Credentials and sensitive files
+# Only add if storing credentials locally (not recommended)
+# .env
+# config.local.py
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Logs
+*.log
+
+# Node modules (if using npm packages)
+node_modules/
+npm-debug.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+temp/
+tmp/
